@@ -190,7 +190,7 @@ def _get_reference_md5sum(url):
     """By convention the md5 hash for url is stored in url + '.md5sum'."""
     url_md5sum = url + '.md5sum'
     if url == 'https://dax-cdn.cdn.appdomain.cloud/dax-publaynet/1.0.0/pre-trained-models/Faster-RCNN/model_final.pkl':
-        md5sum = "b'2203b758af6d95d61ddaaa7f02abda57'"
+        md5sum = bytes("2203b758af6d95d61ddaaa7f02abda57", 'utf-8')
     else:
         md5sum = urllib.request.urlopen(url_md5sum).read().strip()
     return md5sum
